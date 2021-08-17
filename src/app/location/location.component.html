@@ -1,0 +1,6 @@
+<p>location works!</p>
+<select name="state" id="state" [(ngModel)]="choosenState" (change)="statesDropdown()">
+  <option value="{{ state.state_id }}" *ngFor="let state of allStates">
+    {{ state.state_name }}
+  </option>
+</select>
