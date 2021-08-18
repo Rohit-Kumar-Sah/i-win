@@ -11,12 +11,7 @@
 </select>
 
 <p>Select District</p>
-<select
-  name="district"
-  id="district"
-  [(ngModel)]="choosenDistrict"
-  (change)="districtDropdown()"
->
+<select name="district" id="district" [(ngModel)]="choosenDistrict">
   <option
     value="{{ district.district_id }}"
     *ngFor="let district of allDistricts"
@@ -24,3 +19,41 @@
     {{ district.district_name }}
   </option>
 </select>
+
+<p>Choose your preferred data:</p>
+<input
+  type="date"
+  name="choosenDate"
+  id="choosenDate"
+  [(ngModel)]="vaccineDate"
+  (change)="findByDistrict()"
+/>
+
+<table>
+  <thead>
+    <th>
+      <tr>
+        <th>Sl No.</th>
+        <th>Vaccine</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Block</th>
+        <th>Pin Code</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Slots</th>
+        <th>Fee Type</th>
+        <th>Fee</th>
+        <th>Dose 1 Capacity</th>
+        <th>Dose 2 Capacity</th>
+        <th>Allow All Age</th>
+        <th>Minimum Age Limit</th>
+      </tr>
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
