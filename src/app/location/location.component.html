@@ -1,6 +1,26 @@
-<p>location works!</p>
-<select name="state" id="state" [(ngModel)]="choosenState" (change)="statesDropdown()">
+<p>Select State :</p>
+<select
+  name="state"
+  id="state"
+  [(ngModel)]="choosenState"
+  (change)="statesDropdown()"
+>
   <option value="{{ state.state_id }}" *ngFor="let state of allStates">
     {{ state.state_name }}
+  </option>
+</select>
+
+<p>Select District</p>
+<select
+  name="district"
+  id="district"
+  [(ngModel)]="choosenDistrict"
+  (change)="districtDropdown()"
+>
+  <option
+    value="{{ district.district_id }}"
+    *ngFor="let district of allDistricts"
+  >
+    {{ district.district_name }}
   </option>
 </select>

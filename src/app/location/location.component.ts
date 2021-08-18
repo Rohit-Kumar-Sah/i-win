@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
   allStates: { state_id: number; state_name: string }[] = [];
+  allDistricts :{district_id:number ; district_name: string}[] =[];
   constructor(private http: HttpClient) { }
   choosenState: number | undefined;
+  choosenDistrict: number | undefined;
   ngOnInit(): void {
     this.http
       .get<{ states: []; ttl: number }>(
@@ -24,9 +26,13 @@ export class LocationComponent implements OnInit {
   }
   statesDropdown(){
     console.log(this.choosenState);
-    this.http.get(`https://cdn-api.co-vin.in/api/v2/admin/location/districts/${this.choosenState}`).
+    this.http.get<{districts:{district_id:number ; district_name: string}[] ; ttl:number}>(`https://cdn-api.co-vin.in/api/v2/admin/location/districts/${this.choosenState}`).
     subscribe(data=>{
       console.log("raw district:",data);
     });
+  }
+
+  districtDropdown(){
+    
   }
 }
