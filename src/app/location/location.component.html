@@ -31,29 +31,47 @@
 
 <table>
   <thead>
-    <th>
-      <tr>
-        <th>Sl No.</th>
-        <th>Vaccine</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Block</th>
-        <th>Pin Code</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Slots</th>
-        <th>Fee Type</th>
-        <th>Fee</th>
-        <th>Dose 1 Capacity</th>
-        <th>Dose 2 Capacity</th>
-        <th>Allow All Age</th>
-        <th>Minimum Age Limit</th>
-      </tr>
-    </th>
+    <tr>
+      <th>Sl No.</th>
+      <th>Vaccine</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Block</th>
+      <th>Pin Code</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Slots</th>
+      <th>Fee Type</th>
+      <th>Fee</th>
+      <th>Dose 1 Capacity</th>
+      <th>Dose 2 Capacity</th>
+      <th>Allow All Age</th>
+      <th>Minimum Age Limit</th>
+    </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td>
+    <tr *ngFor="let session of allSessions; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ session.vaccine }}</td>
+      <td>{{ session.name }}</td>
+      <td>{{ session.address }}</td>
+      <td>{{ session.block_name }}</td>
+      <td>{{ session.pincode }}</td>
+      <td>{{ session.from }}</td>
+      <td>{{ session.to }}</td>
+      <td>
+        <tr *ngFor="let slot of session.slots">
+          <td>
+            {{ slot }}
+          </td>
+        </tr>
+      </td>
+      <td>{{ session.fee_type }}</td>
+      <td>{{ session.fee }}</td>
+      <td>{{ session.available_capacity_dose1 }}</td>
+      <td>{{ session.available_capacity_dose2 }}</td>
+      <td>{{ session.allow_all_age }}</td>
+      <td>{{ session.min_age_limit }}</td>
     </tr>
   </tbody>
 </table>
