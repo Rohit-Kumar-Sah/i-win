@@ -9,10 +9,13 @@ import { DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, LocationComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatSelectModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatInputModule],
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })
