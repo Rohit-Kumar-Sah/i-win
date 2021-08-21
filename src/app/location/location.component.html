@@ -1,14 +1,16 @@
-<p>Select State :</p>
-<select
-  name="state"
-  id="state"
-  [(ngModel)]="choosenState"
-  (change)="statesDropdown()"
->
-  <option value="{{ state.state_id }}" *ngFor="let state of allStates">
-    {{ state.state_name }}
-  </option>
-</select>
+<mat-form-field appearance="fill">
+  <mat-label>Select State :</mat-label>
+  <mat-select
+    name="state"
+    id="state"
+    [(value)]="choosenState"
+    (selectionChange)="statesDropdown()"
+  >
+    <mat-option [value]="state.state_id" *ngFor="let state of allStates">
+      {{ state.state_name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
 <p>Select District</p>
 <select name="district" id="district" [(ngModel)]="choosenDistrict">

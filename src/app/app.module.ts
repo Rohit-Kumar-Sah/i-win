@@ -8,10 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatSelectModule } from '@angular/material/select';
+
 @NgModule({
   declarations: [AppComponent, LocationComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatSelectModule],
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
