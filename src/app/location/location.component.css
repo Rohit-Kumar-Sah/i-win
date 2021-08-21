@@ -15,3 +15,7 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #ddd;
 }
+
+mat-form-field {
+  margin: 0 2%;
+}
