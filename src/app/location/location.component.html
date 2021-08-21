@@ -12,15 +12,17 @@
   </mat-select>
 </mat-form-field>
 
-<p>Select District</p>
-<select name="district" id="district" [(ngModel)]="choosenDistrict">
-  <option
-    value="{{ district.district_id }}"
-    *ngFor="let district of allDistricts"
-  >
-    {{ district.district_name }}
-  </option>
-</select>
+<mat-form-field appearance="fill">
+  <mat-label>Select District :</mat-label>
+  <mat-select name="district" id="district" [(value)]="choosenDistrict">
+    <mat-option
+      [value]="district.district_id"
+      *ngFor="let district of allDistricts"
+    >
+      {{ district.district_name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
 <p>Choose your preferred data:</p>
 <input
