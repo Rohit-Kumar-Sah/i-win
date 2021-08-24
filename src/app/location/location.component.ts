@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./location.component.css'],
 })
 export class LocationComponent implements OnInit {
+  fdate: any | undefined;
   allStates: { state_id: number; state_name: string }[] = [];
   allDistricts: { district_id: number; district_name: string }[] = [];
   allSessions: {
@@ -59,10 +60,18 @@ export class LocationComponent implements OnInit {
         console.log('raw district:', data);
         this.allDistricts = data.districts;
       });
-  }
 
+  }
+  districtDropdown() {
+    if (this.fdate) {
+      this.fireSearch();
+    }
+  }
   findByDistrict() {
-    let fdate = this.datePipe.transform(this.vaccineDate, 'dd-MM-yyyy');
+    this.fdate = this.datePipe.transform(this.vaccineDate, 'dd-MM-yyyy');
+    this.fireSearch();
+  }
+  fireSearch() {
     this.http
       .get<{
         sessions: {
@@ -87,7 +96,7 @@ export class LocationComponent implements OnInit {
           slots: []
         }[]
       }>(
-        `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${this.choosenDistrict}&date=${fdate}`
+        `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${this.choosenDistrict}&date=${this.fdate}`
       )
       .subscribe((data) => {
         this.allSessions = data.sessions;

@@ -14,7 +14,12 @@
 
 <mat-form-field appearance="fill">
   <mat-label>Select District :</mat-label>
-  <mat-select name="district" id="district" [(value)]="choosenDistrict">
+  <mat-select
+    name="district"
+    id="district"
+    [(value)]="choosenDistrict"
+    (selectionChange)="districtDropdown()"
+  >
     <mat-option
       [value]="district.district_id"
       *ngFor="let district of allDistricts"
