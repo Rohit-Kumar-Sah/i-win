@@ -29,6 +29,25 @@
   </mat-select>
 </mat-form-field>
 
+<mat-checkbox
+  class="example-margin"
+  [(ngModel)]="covishield"
+  (change)="filterme({covishield},'vaccine')"
+  >covishield</mat-checkbox
+>
+<mat-checkbox
+  class="example-margin"
+  [(ngModel)]="covaxin"
+  (change)="filterme({covaxin},'vaccine')"
+  >covaxin</mat-checkbox
+>
+<mat-checkbox
+  class="example-margin"
+  [(ngModel)]="sputnik"
+  (change)="filterme({sputnik},'vaccine')"
+  >sputnik V</mat-checkbox
+>
+
 <mat-form-field class="example-full-width" appearance="fill">
   <mat-label>Choose a date</mat-label>
   <input

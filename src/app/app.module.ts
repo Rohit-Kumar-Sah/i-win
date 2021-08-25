@@ -12,10 +12,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [AppComponent, LocationComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatInputModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, BrowserAnimationsModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatCheckboxModule],
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })
